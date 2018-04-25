@@ -1,0 +1,13 @@
+﻿table, th, td {
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+}
+th, td {
+	padding: 10px;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+.row1 {
+	background-color: #6699CC;
+}

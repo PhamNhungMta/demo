@@ -1,1 +1,36 @@
 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="demo.css">
+    
+</head>
+<body>
+    <br/>
+    <button id="create" onclick="showList()">Create</button>
+    <br/>
+    <table id="myTable" style="width:100%">
+        <tr class="row1">
+            <th style="width:10%;">manufacturerId</th>
+            <th style="width:8%;">addressline2</th>
+            <th style="width:5%;">zip</th>
+            <th style="width:8%;">phone</th>
+            <th style="width:15%;">addressline1</th>
+            <th style="width:8%;">fax</th>
+            <th style="width:16%;">email</th>
+            <th style="width:13%;">name</th>
+            <th style="width:3%;">state</th>
+            <th style="width:6%;">city</th>
+            <th style="width:8%;">rep</th>
+        </tr>
+        <tbody id="content">
+        </tbody>
+        
+    </table>
+    <script type="text/javascript" src="demo.js">
+        window.onload = showList();
+        //document.getElementById("content").innerHTML = showList();
+    </script>
+</body>
+</html>
