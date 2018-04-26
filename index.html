@@ -1,36 +1,52 @@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
     <link rel="stylesheet" type="text/css" href="demo.css">
-    
+    <script type="text/javascript" src="demo.js">
+    </script>
 </head>
 <body>
     <br/>
-    <button id="create" onclick="showList()">Create</button>
+    <button onclick="window.location.href='http://localhost:65019/editor.html'" >Create</button>
+    <br/>
     <br/>
     <table id="myTable" style="width:100%">
-        <tr class="row1">
-            <th style="width:10%;">manufacturerId</th>
-            <th style="width:8%;">addressline2</th>
-            <th style="width:5%;">zip</th>
-            <th style="width:8%;">phone</th>
-            <th style="width:15%;">addressline1</th>
-            <th style="width:8%;">fax</th>
-            <th style="width:16%;">email</th>
-            <th style="width:13%;">name</th>
-            <th style="width:3%;">state</th>
-            <th style="width:6%;">city</th>
-            <th style="width:8%;">rep</th>
-        </tr>
+        <thead>
+            <tr>
+                <th id="1" class="header" onclick="sort(id)" style="width:11%;">manufacturerId</th>
+                <th id="2" class="header" onclick="sort(id)" style="width:9%;">addressline2</th>
+                <th id="3" class="header" onclick="sort(id)" style="width:5%;">zip</th>
+                <th id="4" class="header" onclick="sort(id)" style="width:7%;">phone</th>
+                <th id="5" class="header" onclick="sort(id)" style="width:14%;">addressline1</th>
+                <th id="6" class="header" onclick="sort(id)" style="width:7%;">fax</th>
+                <th id="7" class="header" onclick="sort(id)" style="width:16%;">email</th>
+                <th id="8" class="header" onclick="sort(id)" style="width:13%;">name</th>
+                <th id="9" class="header" onclick="sort(id)" style="width:5%;">state</th>
+                <th id="10" class="header" onclick="sort(id)" style="width:5%;">city</th>
+                <th id="11" class="header" onclick="sort(id)" style="width:8%;">rep</th>
+            </tr>
+        </thead>
         <tbody id="content">
         </tbody>
+        <tfoot></tfoot>
         
     </table>
     <script type="text/javascript" src="demo.js">
-        window.onload = showList();
-        //document.getElementById("content").innerHTML = showList();
+        //window.onload = showList();
+        document.getElementById("content").innerHTML = showList();
     </script>
+    <br/>
+    <div class="dataTable_length">
+        <label id="paging">
+
+        </label>
+        <select name="length">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+    </div>
 </body>
 </html>
