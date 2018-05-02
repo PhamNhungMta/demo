@@ -20,7 +20,6 @@
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"}];
 
-
 function showList(){
     var html = "<table border='1|1'>";
     for (var i = 0; i < lists.length; i++) {
@@ -119,4 +118,50 @@ function sortManufacturerId_desc(id) {
 function editRow(i) {
     window.location.href = "http://localhost:65019/editor.html";
     alert(i);
+}
+function add(manufacturerId,addressline2,zip,phone,addressline1,fax,email,name,state,city,rep){
+    var customer = new Object();
+    customer.manufacturerId = manufacturerId;
+    customer.addressline1 = addressline1;
+    customer.addressline2 = addressline2;
+    customer.zip = zip;
+    customer.phone = phone;
+    customer.fax = fax;
+    customer.email = email;
+    customer.name = name;
+    customer.state = state;
+    customer.city = city;
+    customer.rep = rep;
+    lists[lists.length] = customer;
+    showList();
+}
+
+function Delete(manufacturerId){
+    var r = confirm("Xac nhan xoa phan tu co id = "+manufacturerId+"!");
+    if (r == true) {
+    	for (var i = 0; i <lists.length ; i++) {
+		if (lists[i].manufacturerId == manufacturerId) {
+			lists.splice(i, 1);
+			}
+		}
+    } 
+	showList();
+}
+function update(manufacturerId,addressline2,zip,phone,addressline1,fax,email,name,state,city,rep){
+	alert("cap nhat phan tu co id "+manufacturerId);
+	for (var i = 0; i <lists.length ; i++) {
+		if (lists[i].manufacturerId == manufacturerId) {
+			lists[i].addressline1 = addressline1;
+			lists[i].addressline2 = addressline2;
+			lists[i].zip = zip;
+			lists[i].phone = phone;
+			lists[i].fax = fax;
+			lists[i].email = email;
+			lists[i].name = name;
+			lists[i].state = state;
+			lists[i].city = city;
+			lists[i].rep = rep;
+			}
+		}		
+	showList();
 }

@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="demo.css">
-    <script type="text/javascript" src="demo.js">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <script type="text/javascript" src="js/demo.js">
     </script>
 </head>
 <body>
     <br/>
-    <button onclick="window.location.href='http://localhost:65019/editor.html'" >Create</button>
+    <button onclick="add(1,2,3,4,5,6,7,8,9,10,11);" >Create</button>
+    <button onclick="Delete(1);" >Delete</button>
+    <button onclick="update(1,9,9,9,9,8,9,9,9,9,9,9);" >Update</button>
+    <button onclick="window.location.href='editor.html'">Editor</button>
     <br/>
     <br/>
     <table id="myTable" style="width:100%">
@@ -32,7 +35,7 @@
         <tfoot></tfoot>
         
     </table>
-    <script type="text/javascript" src="demo.js">
+    <script type="text/javascript" src="js/demo.js">
         //window.onload = showList();
         document.getElementById("content").innerHTML = showList();
     </script>
