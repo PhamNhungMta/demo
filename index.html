@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link type="text/css" href="css/demo.css" rel="stylesheet" />
     <script type="text/javascript" src="js/demo.js">
     </script>
 </head>
 <body>
     <br/>
-    <button onclick="add(1,2,3,4,5,6,7,8,9,10,11);" >Create</button>
-    <button onclick="Delete(1);" >Delete</button>
-    <button onclick="update(1,9,9,9,9,8,9,9,9,9,9,9);" >Update</button>
-    <button onclick="window.location.href='editor.html'">Editor</button>
+    <button onclick="window.location.href='editor.html'" >Create</button>
     <br/>
     <br/>
     <table id="myTable" style="width:100%">
@@ -36,20 +33,21 @@
         
     </table>
     <script type="text/javascript" src="js/demo.js">
-        //window.onload = showList();
-        document.getElementById("content").innerHTML = showList();
     </script>
     <br/>
-    <div class="dataTable_length">
-        <label id="paging">
-
-        </label>
-        <select name="length">
+    <div class="pagination">
+        <a href="#" onclick="startPage()"><<</a>
+        <a href="#" onclick="prePage()" id="btn_pre">&laquo</a>
+        <label id="page_number">1 to 10 (30)</label>
+        <a href="#" onclick="nextPage()" id="btn_next">»</a>
+        <a href="#" onclick="endPage()">>></a>
+        <select id="id_length" onchange="changePage(1)" name="length">
             <option value="10">10</option>
             <option value="20">20</option>
             <option value="30">30</option>
             <option value="40">40</option>
         </select>
     </div>
-</body>
+    <script type="text/javascript" src="js/demo.js"></script>
+  </body>
 </html>

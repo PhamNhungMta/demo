@@ -36,3 +36,12 @@ th.headerSortUp{
 th.headerSortDown, th.headerSortUp{
     background-color:#2076e0;
 }
+.pagination{
+    display: inline-block;
+}
+.pagination a{
+    padding: 4px 8px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+}
+.pagination a:hover:not(.active) {background-color: #ddd;}

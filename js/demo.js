@@ -1,29 +1,37 @@
-﻿var lists = [
+﻿var current_page = 1;
+
+var list = [
         {manufacturerId:"19978451", addressline2:"Building 600", zip:"94530", phone:"650-555-0140", addressline1:"399 San Pablo Ave", fax:"408-555-0143", email:"www.allsushi@example.com", name:"All Sushi", state:"CA", city:"Cleveland", rep:"Teresa Ho"},
         {manufacturerId:"19971223", addressline2:"Building C5", zip:"94530", phone:"408-555-0183", addressline1:"5960 Inglewood Pkwy", fax:"408-555-0184", email:"www.billbank@example.com", name:"Bills Bank and Sons", state:"WI", city:"Pleasantville", rep:"Frank Smith"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985588", addressline2:"Building 11", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95058", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985591", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985592", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985595", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985593", addressline2:"Building 14", zip:"95055", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"506-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985596", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985599", addressline2:"Building 14", zip:"95051", phone:"506-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985597", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
         {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
-        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"}];
+        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId: "19985590", addressline2: "Building 14", zip: "95051", phone: "206-555-0178", addressline1: "4000 Cormorant Circle", fax: "206-555-0179", email: "ann.jones@example.com", name: "Birders United", state: "OR", city: "Burlington", rep: "Ann Jones" },
+        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        {manufacturerId:"19985590", addressline2:"Building 14", zip:"95051", phone:"206-555-0178", addressline1:"4000 Cormorant Circle", fax:"206-555-0179", email:"ann.jones@example.com", name:"Birders United", state:"OR", city:"Burlington", rep:"Ann Jones"},
+        { manufacturerId: "19985590", addressline2: "Building 14", zip: "95051", phone: "206-555-0178", addressline1: "4000 Cormorant Circle", fax: "206-555-0179", email: "ann.jones@example.com", name: "Birders United", state: "OR", city: "Burlington", rep: "Ann Jones" }];
 
-function showList(){
+
+localStorage.setItem("array", JSON.stringify(list));
+var lists = JSON.parse(localStorage.getItem("array"));
+
+function showList(start, end){
     var html = "<table border='1|1'>";
-    for (var i = 0; i < lists.length; i++) {
-        html += "<tr onclick = editRow(" + i + ")>";
+    for (var i = start; i < end; i++) {
+        html += "<tr onclick = editRow(" + lists[i].manufacturerId + ")>";
         html += "<td> <a href=''>" + lists[i].manufacturerId + "</a></td>";
         html+="<td>"+lists[i].addressline2+"</td>";
         html+="<td>"+lists[i].zip+"</td>";
@@ -41,7 +49,9 @@ function showList(){
     html+="</table>";
     document.getElementById("content").innerHTML = html;
 }
-showList();
+showList(0, 10);
+
+
 var click = 0;
 var click_new = 0;
 var x = 0;
@@ -116,52 +126,65 @@ function sortManufacturerId_desc(id) {
 }
 
 function editRow(i) {
-    window.location.href = "http://localhost:65019/editor.html";
-    alert(i);
+    window.location.href = "editor.html?" + i;
 }
-function add(manufacturerId,addressline2,zip,phone,addressline1,fax,email,name,state,city,rep){
-    var customer = new Object();
-    customer.manufacturerId = manufacturerId;
-    customer.addressline1 = addressline1;
-    customer.addressline2 = addressline2;
-    customer.zip = zip;
-    customer.phone = phone;
-    customer.fax = fax;
-    customer.email = email;
-    customer.name = name;
-    customer.state = state;
-    customer.city = city;
-    customer.rep = rep;
-    lists[lists.length] = customer;
-    showList();
+var t = document.getElementById("id_length").value;
+document.getElementById("page_number").innerHTML = 1 + " to " + t + " (" + lists.length + ")";
+
+
+function prePage() {
+    var t = document.getElementById("id_length").value;
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+        //var s = (current_page - 1) * t;
+        //document.getElementById("page_number").innerHTML = (s + 1) + " to " + (Number(s)+Number(t)) + " (" + lists.length + ")";
+    }
+}
+function nextPage() {
+    var t = document.getElementById("id_length").value;
+    if (current_page < numsPage()) {
+        current_page++;
+        changePage(current_page);
+        //var s = (current_page - 1) * t;
+        //if ((Number(s) + Number(t)) < lists.length) {
+        //    document.getElementById("page_number").innerHTML = (s + 1) + " to " + (Number(s) + Number(t)) + " (" + lists.length + ")";
+        //}
+        //else {
+        //    document.getElementById("page_number").innerHTML = (s + 1) + " to " + lists.length + " (" + lists.length + ")";
+        //}
+
+    }
+}
+function startPage() {
+    var t = document.getElementById("id_length").value;
+    changePage(1);
+    
+        //var s = (current_page - 1) * t;
+        //document.getElementById("page_number").innerHTML = (s + 1) + " to " + (Number(s) + Number(t)) + " (" + lists.length + ")";
+    
+}
+function endPage() {
+    var t = document.getElementById("id_length").value;
+    changePage(numsPage());
+}
+function changePage(page) {
+    var t = document.getElementById("id_length").value;
+    if (page < 1) page = 1;
+    if (page > numsPage()) page = numsPage();
+
+    if ((Number(page) * Number(t)) < lists.length) {
+        showList((page - 1) * t, (Number(page) * Number(t)));
+        document.getElementById("page_number").innerHTML = ((page - 1) * t + 1) + " to " + (Number(page) * Number(t)) + " (" + lists.length + ")";
+    }
+    else {
+        showList((page - 1) * t, lists.length);
+        document.getElementById("page_number").innerHTML = ((page - 1) * t + 1) + " to " + lists.length + " (" + lists.length + ")";
+    }
+    
+}
+function numsPage() {
+    var t = document.getElementById("id_length").value;
+    return Math.ceil(lists.length / t);
 }
 
-function Delete(manufacturerId){
-    var r = confirm("Xac nhan xoa phan tu co id = "+manufacturerId+"!");
-    if (r == true) {
-    	for (var i = 0; i <lists.length ; i++) {
-		if (lists[i].manufacturerId == manufacturerId) {
-			lists.splice(i, 1);
-			}
-		}
-    } 
-	showList();
-}
-function update(manufacturerId,addressline2,zip,phone,addressline1,fax,email,name,state,city,rep){
-	alert("cap nhat phan tu co id "+manufacturerId);
-	for (var i = 0; i <lists.length ; i++) {
-		if (lists[i].manufacturerId == manufacturerId) {
-			lists[i].addressline1 = addressline1;
-			lists[i].addressline2 = addressline2;
-			lists[i].zip = zip;
-			lists[i].phone = phone;
-			lists[i].fax = fax;
-			lists[i].email = email;
-			lists[i].name = name;
-			lists[i].state = state;
-			lists[i].city = city;
-			lists[i].rep = rep;
-			}
-		}		
-	showList();
-}

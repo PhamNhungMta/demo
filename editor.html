@@ -1,238 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Editor</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/demo.js">
-	</script>
+	<title>Demo Computer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<table>
-	<h1>Editor</h1>
-	<tr>
-		<td>menufactureId</td>
-		<td><input type="text" id="menufactureId"></td>
-		<td><span id="error1"></span></td>
-	</tr>
-	<tr>
-		<td>addressline2</td>
-		<td><input type="text" id="addressline2"></td>
-		<td><span id="error2"></span></td>
-	</tr>
-	<tr>
-		<td>zip</td>
-		<td><input type="text" id="zip"></td>
-		<td><span id="error3"></span></td>
-	</tr>
-	<tr>
-		<td>phone</td>
-		<td><input type="text" id="phone"></td>
-		<td><span id="error4"></span></td>
-	</tr>
-	<tr>
-		<td>addressline1</td>
-		<td><input type="text" id="addressline1"></td>
-		<td><span id="error5"></span></td>
-	</tr>
-	<tr>
-		<td>fax</td>
-		<td><input type="text" id="fax"></td>
-		<td><span id="error6"></span></td>
-	</tr>
-	<tr>
-		<td>email</td>
-		<td><input type="text" id="email"></td>
-		<td><span id="error7"></span></td>
-	</tr>
-	<tr>
-		<td>name</td>
-		<td><input type="text" id="name"></td>
-		<td><span id="error8"></span></td>
-	</tr>
-	<tr>
-		<td>state</td>
-		<td><input type="text" id="state"></td>
-		<td><span id="error9"></span></td>
-	</tr>
-	<tr>
-		<td>city</td>
-		<td><input type="text" id="city"></td>
-		<td><span id="error10"></span></td>
-	</tr>
-	<tr>
-		<td>rep</td>
-		<td><input type="text" id="rep"></td>
-		<td><span id="error11"></span></td>
-	</tr>
-	<tr id="content">
-		<td colspan="2"><button onclick="update1();" id="myBtn">Save</button><button onclick="Delete1();">Delete</button><button onclick="window.location.href='index.html'">Cancel</button></td>
-	</tr>
-	<tr id="content2">
-		<td colspan="2"><button onclick="add1();" id="myBtn">Save</button><button onclick="window.location.href='index.html'">Cancel</button></td>
-	</tr>
-</table>
-<p id="demo"></p>
-	<script type="text/javascript">
-	   	var url_string = window.location.href;
-	    var url = new URL(url_string);
-	    var id = url.searchParams.get("id");
-	    var x = document.getElementById("content");
-	    var y = document.getElementById("content2");
-	    if (id != null) {
-	    	y.style.display = "none";
-	    	for(var i=0;i<lists.length;i++) {
-	    		if (id == lists[i].manufacturerId) {
-	    			document.getElementById("menufactureId").value = lists[i].manufacturerId;
-	    			document.getElementById("addressline2").value = lists[i].addressline2;
-	    			document.getElementById("zip").value = lists[i].zip;
-	    			document.getElementById("phone").value = lists[i].phone;
-	    			document.getElementById("addressline1").value = lists[i].addressline1;
-	    			document.getElementById("fax").value = lists[i].fax;
-	    			document.getElementById("email").value = lists[i].email;
-	    			document.getElementById("name").value = lists[i].name;
-	    			document.getElementById("state").value = lists[i].state;
-	    			document.getElementById("city").value = lists[i].city;
-	    			document.getElementById("rep").value = lists[i].rep;
-	    		}
-	    	}
-	    } else {
-	    	x.style.display = "none";
-	    }
-	    	function validate(){
-			var menufactureId = document.getElementById("menufactureId").value;
-			var addressline2 = document.getElementById("addressline2").value;
-			var zip = document.getElementById("zip").value;
-			var phone = document.getElementById("phone").value;
-			var addressline1 = document.getElementById("addressline1").value;
-			var fax = document.getElementById("fax").value;
-			var email = document.getElementById("email").value;
-			var name = document.getElementById("name").value;
-			var state = document.getElementById("state").value;
-			var city = document.getElementById("city").value;
-			var rep = document.getElementById("rep").value;
-			if (menufactureId == "") {
-				document.getElementById("error1").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error1").innerHTML = "";
-			}
-			if (addressline2 == "") {
-				document.getElementById("error2").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error2").innerHTML = "";
-			}
-			if (zip == "") {
-				document.getElementById("error3").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error3").innerHTML = "";
-			}
-			if (phone == "") {
-				document.getElementById("error4").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error4").innerHTML = "";
-			}
-			if (addressline1 == "") {
-				document.getElementById("error5").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error5").innerHTML = "";
-			}
-			if (fax == "") {
-				document.getElementById("error6").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error6").innerHTML = "";
-			}
-			if (email == "") {
-				document.getElementById("error7").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error7").innerHTML = "";
-			}
-			if (name == "") {
-				document.getElementById("error8").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error8").innerHTML = "";
-			}
-			if (state == "") {
-				document.getElementById("error9").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error9").innerHTML = "";
-			}
-			if (city == "") {
-				document.getElementById("error10").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error10").innerHTML = "";
-			}
-			if (rep == "") {
-				document.getElementById("error11").innerHTML = "**Please fill in here";
-
-			} else {
-				document.getElementById("error11").innerHTML = "";
-			}
-			if (menufactureId == "" || addressline1 == "" || addressline2 == "" || phone == "" || zip == "" || fax == "" ||
-				 email == "" || name == "" || state == "" || city == "" || rep == "") {
-				return false;
-			} else {
-				return true;
-			}
-		}
-	    function update1(){
-	    	if (validate()) {
-				for (var i = 0; i <lists.length ; i++) {
-					if (lists[i].manufacturerId == document.getElementById("menufactureId").value) {
-					    lists[i].addressline1 = document.getElementById("addressline1").value;
-					    lists[i].addressline2 = document.getElementById("addressline2").value;
-					    lists[i].zip = document.getElementById("zip").value;
-					    lists[i].phone = document.getElementById("phone").value;
-					    lists[i].fax = document.getElementById("fax").value;
-					    lists[i].email = document.getElementById("email").value;
-					    lists[i].name = document.getElementById("name").value;
-					    lists[i].state = document.getElementById("state").value;
-					    lists[i].city = document.getElementById("city").value;
-					    lists[i].rep = document.getElementById("rep").value;
-						}
-					}
-				alert("Cap nhat thanh cong!");
-				document.location.href = "index.html";
-	    	}
-		}
-		function add1(){
-			if (validate()) {
-				var menufactureId = document.getElementById("menufactureId").value;
-				var addressline2 = document.getElementById("addressline2").value;
-				var zip = document.getElementById("zip").value;
-				var phone = document.getElementById("phone").value;
-				var addressline1 = document.getElementById("addressline1").value;
-				var fax = document.getElementById("fax").value;
-				var email = document.getElementById("email").value;
-				var name = document.getElementById("name").value;
-				var state = document.getElementById("state").value;
-				var city = document.getElementById("city").value;
-				var rep = document.getElementById("rep").value;
-				add(menufactureId,addressline2,zip,phone,addressline1,fax,email,name,state,city,rep);
-				alert("Them thanh cong!");
-				document.location.href = "index.html";
-
-			}
-		}
-		function Delete1(){
-			var r = confirm("Xac nhan xoa phan tu co id = "+document.getElementById("menufactureId").value+"!");
-		    if (r == true) {
-		    	for (var i = 0; i <lists.length ; i++) {
-				if (lists[i].manufacturerId == document.getElementById("menufactureId").value) {
-					lists.splice(i, 1);
-					}
-				}
-		    }
-			document.location.href = "index.html";
-		}
-	</script>
+	<div class="header">
+		<p>Header</p>
+	</div>
+	<div class="navi">
+		<p>Navi</p>
+	</div>
+	<div class="content">
+		<div class="content_left">
+		<p>Content Left</p>
+	</div>
+		<div class="content_right">
+		<p>Content Right</p>
+	</div>
+	</div>
+	
+	<div class="footer">
+		<p>Footer</p>
+	</div>
 </body>
 </html>
